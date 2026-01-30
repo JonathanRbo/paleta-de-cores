@@ -1,4 +1,4 @@
-# Color Palette Generator
+# Gerador de paleta de cores
 
 Um gerador de paletas de cores harmoniosas construído com PHP e [Squeleton Framework](https://squeleton.dev).
 
@@ -140,4 +140,5 @@ Obrigado pela visita! ⭐
 ---
 
 Feito com PHP + [Squeleton Framework](https://squeleton.dev)
+
 
