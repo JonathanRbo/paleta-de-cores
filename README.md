@@ -132,18 +132,12 @@ O gerador usa conversões precisas entre espaços de cor:
 - **HEX ↔ HSL**: Permite manipulação intuitiva de matiz, saturação e luminosidade
 - **Harmonias**: Baseadas em ângulos no círculo cromático (30°, 120°, 180°, etc.)
 
-## Contribuindo
-
-1. Fork o projeto
-2. Crie sua branch (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
-
 ## Licença
 
-MIT License - veja [LICENSE](LICENSE) para detalhes.
+Desenvolvendo com muito café e paixão pela programação
+Obrigado pela visita! ⭐
 
 ---
 
 Feito com PHP + [Squeleton Framework](https://squeleton.dev)
+
