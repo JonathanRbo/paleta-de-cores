@@ -1,173 +1,149 @@
-🌱 Curso de Meio Ambiente | Sustentabilidade na Prática
+# Color Palette Generator
 
-> Curso completo de Meio Ambiente - Aprenda práticas sustentáveis e transforme o futuro do planeta
+Um gerador de paletas de cores harmoniosas construído com PHP e [Squeleton Framework](https://squeleton.dev).
 
----
+![PHP](https://img.shields.io/badge/PHP-7.4+-777BB4?style=flat-square&logo=php&logoColor=white)
+![Squeleton](https://img.shields.io/badge/Squeleton-v4-6366f1?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-## 🎯 Transforme o Futuro com **Sustentabilidade**
+## Features
 
-Aprenda as melhores práticas ambientais e torne-se um profissional qualificado em meio ambiente. Curso 100% online com certificado reconhecido.
+- **7 Tipos de Harmonia**: Análoga, Complementar, Triádica, Tetrádica, Split-Complementar, Monocromática e Aleatória
+- **Geração em Tempo Real**: Pressione `Espaço` para gerar novas paletas instantaneamente
+- **Bloqueio de Cores**: Trave cores específicas enquanto regenera o resto da paleta
+- **Exportação Múltipla**: CSS, SCSS, JSON e Tailwind config
+- **Histórico**: Acesse rapidamente as últimas 10 paletas geradas
+- **Cópia Rápida**: Copie cores individuais ou código completo com um clique
+- **100% Responsivo**: Funciona em desktop, tablet e mobile
+- **Dark Mode**: Interface escura elegante
 
-### 📊 Números do Curso
+## Demo
 
-- **+5.000** Alunos
-- **4.9/5** Avaliação
-- **120h** de Conteúdo
+Acesse a demo online ou execute localmente:
 
----
+```bash
+# Com PHP built-in server
+cd color-palette-generator
+php -S localhost:8000
 
-## ✨ Por que escolher nosso curso?
+# Acesse http://localhost:8000
+```
 
-### 🎓 Certificado Reconhecido
-Certificado válido em todo território nacional, reconhecido por empresas e instituições.
+## Instalação
 
-### 💻 100% Online
-Estude no seu ritmo, de qualquer lugar. Acesso vitalício ao conteúdo.
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/color-palette-generator.git
+```
 
-### 👨‍🏫 Suporte Especializado
-Tire suas dúvidas com professores especialistas em meio ambiente.
+2. Coloque em seu servidor web (Apache, Nginx, etc.) ou use o servidor PHP:
+```bash
+php -S localhost:8000
+```
 
-### 📚 Material Completo
-Apostilas, videoaulas, exercícios práticos e estudos de caso reais.
+3. Acesse no navegador.
 
-### 👥 Comunidade Ativa
-Faça networking com outros profissionais e alunos engajados.
+## API
 
-### 🔄 Atualizações Gratuitas
-Conteúdo sempre atualizado com as últimas práticas sustentáveis.
+O projeto inclui uma API PHP para geração de paletas via HTTP.
 
----
+### Endpoint
 
-## 💰 Planos Disponíveis
+```
+GET /api/generate.php
+POST /api/generate.php
+```
 
-### 📦 Básico - R$ 297
-**Ideal para iniciantes**
+### Parâmetros
 
-- ✅ Acesso por 6 meses
-- ✅ 40 videoaulas
-- ✅ Apostila digital
-- ✅ Certificado de conclusão
-- ✅ Suporte via e-mail
+| Parâmetro | Tipo | Padrão | Descrição |
+|-----------|------|--------|-----------|
+| `base` | string | `#6366f1` | Cor base em formato HEX |
+| `harmony` | string | `random` | Tipo de harmonia |
 
----
+### Tipos de Harmonia
 
-### ⭐ Intermediário - R$ 497 (**MAIS POPULAR**)
-**Para profissionais**
+- `analogous` - Cores adjacentes no círculo cromático
+- `complementary` - Cores opostas no círculo cromático
+- `triadic` - Três cores equidistantes
+- `tetradic` - Quatro cores em retângulo
+- `split-complementary` - Base + duas cores adjacentes à complementar
+- `monochromatic` - Variações de luminosidade da mesma cor
+- `random` - Cores aleatórias harmoniosas
 
-- ✅ Acesso por 12 meses
-- ✅ 80 videoaulas
-- ✅ Apostila + Ebooks extras
-- ✅ Certificado reconhecido
-- ✅ Suporte prioritário
-- ✅ Grupo exclusivo
-- ✅ 3 mentorias ao vivo
+### Exemplo de Uso
 
----
+```bash
+# Gerar paleta análoga baseada em azul
+curl "http://localhost:8000/api/generate.php?base=%236366f1&harmony=analogous"
+```
 
-### 💎 Premium - R$ 797
-**Experiência completa**
+### Resposta
 
-- ✅ Acesso vitalício
-- ✅ +120 videoaulas
-- ✅ Todo material impresso
-- ✅ Certificado internacional
-- ✅ Suporte 24/7
-- ✅ Comunidade VIP
-- ✅ Mentorias ilimitadas
-- ✅ Acesso a eventos
-- ✅ Consultoria individual
+```json
+{
+  "success": true,
+  "base_color": "#6366f1",
+  "harmony": "analogous",
+  "palette": [
+    {
+      "index": 1,
+      "hex": "#8B66F1",
+      "rgb": {"r": 139, "g": 102, "b": 241},
+      "hsl": {"h": 256, "s": 82, "l": 67},
+      "name": "Roxo",
+      "css_rgb": "rgb(139, 102, 241)",
+      "css_hsl": "hsl(256, 82%, 67%)"
+    }
+    // ... mais 4 cores
+  ],
+  "exports": {
+    "css": ":root { ... }",
+    "scss": "$color-1: ...",
+    "tailwind": "colors: { ... }"
+  }
+}
+```
 
-> 🛡️ Todos os planos incluem garantia de 7 dias
+## Estrutura do Projeto
 
----
+```
+color-palette-generator/
+├── index.php          # Interface principal
+├── api/
+│   └── generate.php   # API de geração de paletas
+└── README.md
+```
 
-## 💬 Depoimentos
+## Tecnologias
 
-### Maria Rita Silva - Gestora Ambiental
-> "O curso superou minhas expectativas! Consegui implementar práticas sustentáveis na empresa onde trabalho e fui promovida. O conteúdo é muito completo e os professores são excelentes."
+- **Backend**: PHP 7.4+
+- **Frontend**: [Squeleton Framework v4](https://squeleton.dev)
+  - CSS Grid & Flexbox utilities
+  - WOW.js animations
+  - Toastify notifications
+  - Iccons icon set
+- **Teoria das Cores**: Algoritmos baseados em HSL para harmonias precisas
 
-### João Santos - Consultor Ambiental
-> "Excelente investimento! As aulas são dinâmicas e os casos práticos me ajudaram muito a entender como aplicar o conhecimento no dia a dia. Recomendo para todos."
+## Teoria das Cores
 
-### Ana Paula Costa - Consultora Independente
-> "Comecei do zero e hoje atuo como consultora ambiental. O curso me deu toda a base teórica e prática que eu precisava. A comunidade é muito acolhedora!"
+O gerador usa conversões precisas entre espaços de cor:
 
-### Carlos Fernandes - Engenheiro Ambiental
-> "A flexibilidade de estudar online foi fundamental para mim. Consegui conciliar com meu trabalho e ainda tive suporte de qualidade. Valeu cada centavo!"
+- **HEX ↔ HSL**: Permite manipulação intuitiva de matiz, saturação e luminosidade
+- **Harmonias**: Baseadas em ângulos no círculo cromático (30°, 120°, 180°, etc.)
 
----
+## Contribuindo
 
-## ❓ Perguntas Frequentes (FAQ)
+1. Fork o projeto
+2. Crie sua branch (`git checkout -b feature/nova-feature`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/nova-feature`)
+5. Abra um Pull Request
 
-### O curso possui certificado?
-Sim! Todos os nossos planos incluem certificado de conclusão. O certificado é emitido digitalmente após a conclusão de todas as aulas e aprovação nas avaliações.
+## Licença
 
-**O certificado é válido para:**
-- Horas complementares em faculdades
-- Processos seletivos de empresas
-- Comprovação de capacitação profissional
-- Evolução funcional no serviço público
-
-Os planos Intermediário e Premium incluem certificado com carga horária ampliada e reconhecimento internacional.
-
----
-
-### Quanto tempo tenho para concluir o curso?
-**Prazos de acesso:**
-- **Básico:** 6 meses de acesso
-- **Intermediário:** 12 meses de acesso
-- **Premium:** Acesso vitalício
-
-Durante o período de acesso, você pode assistir às aulas quantas vezes quiser e no seu próprio ritmo. A maioria dos alunos conclui o curso entre 2 a 4 meses, dedicando algumas horas por semana.
-
-Não há prazo mínimo para conclusão - você pode acelerar ou ir com calma, de acordo com sua disponibilidade.
-
----
-
-### Preciso de conhecimentos prévios?
-**Não!** O curso foi desenvolvido para atender desde iniciantes até profissionais que desejam se especializar.
-
-**Para iniciantes:**
-Começamos do básico, explicando conceitos fundamentais de meio ambiente, sustentabilidade e legislação ambiental de forma clara e didática.
-
-**Para profissionais:**
-Oferecemos conteúdo avançado com estudos de caso, técnicas modernas de gestão ambiental e aplicações práticas no mercado de trabalho.
-
-O único requisito é ter vontade de aprender e interesse pela área ambiental!
-
----
-
-### Como funciona o suporte?
-Oferecemos diferentes níveis de suporte de acordo com seu plano:
-
-- **Plano Básico:** Suporte via e-mail com resposta em até 48h
-- **Plano Intermediário:** Suporte prioritário via e-mail (resposta em 24h) + grupo exclusivo no WhatsApp + 3 mentorias ao vivo por mês
-- **Plano Premium:** Suporte 24/7 via WhatsApp, e-mail e comunidade VIP + mentorias ilimitadas + consultoria individual
-
-Todos os planos incluem acesso à área de dúvidas frequentes dentro da plataforma, com respostas para as perguntas mais comuns dos alunos.
+MIT License - veja [LICENSE](LICENSE) para detalhes.
 
 ---
 
-### Posso parcelar o pagamento?
-**Sim!** Oferecemos diversas opções de pagamento:
-
-- **Cartão de Crédito:** Parcele em até 12x sem juros
-- **Boleto Bancário:** Pagamento à vista com 10% de desconto
-- **PIX:** Pagamento à vista com 15% de desconto
-
-**🛡️ Garantia de 7 dias:**
-Se você não ficar satisfeito com o curso nos primeiros 7 dias, devolvemos 100% do seu investimento, sem perguntas ou burocracias.
-
-**🔒 Pagamento seguro:**
-Utilizamos plataformas certificadas e criptografia SSL para garantir a segurança de seus dados.
-
-<br>
-
-
-<div align="center">
-
-**© 2026 EcoVida. Todos os direitos reservados ao JonathanRbo**
-
-*Educação ambiental de qualidade para um futuro sustentável.*
-
-</div>
+Feito com PHP + [Squeleton Framework](https://squeleton.dev)
